@@ -1,0 +1,371 @@
+/* Start Global */
+
+* {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+}
+
+.container {
+    max-width:80%;
+    margin:auto
+}
+@font-face {
+    font-family: "FancySignature";
+    src: url("../Fonts/Fancy\ Signature.ttf");
+}
+@font-face {
+    font-family: "Roboto-Thin";
+    src: url("../Fonts/Roboto-Thin.ttf");
+}
+@font-face {
+    font-family: "Roboto-Medium";
+    src: url("../Fonts/Roboto-Medium_0.ttf");
+}
+body {
+    font-family: "Roboto-Thin";
+    background-image: url("../Photos/Background.png");
+    background-size: cover;
+    
+    position: relative;
+}
+
+/* End Menu*/
+
+/* Start Home */
+
+.home {
+    position: relative;
+    top:0;
+    left:0;
+    background-image: url("../Photos/up.png");
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+    /* Start Menu*/
+    .menu {
+        height: 10vh;
+    }
+
+    .menu .menu-container {
+        background-color: transparent;
+        width: 35px;
+        height: 50px;
+        position: absolute;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2rem;
+        z-index: 2;
+    }
+    .menu .menu-container:hover {
+        cursor: pointer;
+    }
+    .menu .menu-container div {
+        background-color: #fff;
+        width: 100%;
+        height: 2px;
+        position: relative;
+        transition: all 0.5s;
+    }
+    .menu .menu-container div::after, .menu .menu-container div::before {
+        content: "";
+        position: absolute;
+        background-color: #fff;
+        width: 100%;
+        height: 2px;
+        
+    }
+    .menu .menu-container div::after {
+        top:-10px
+    }
+    .menu .menu-container div::before {
+        top:10px
+    }
+    
+    .menu.active .menu-container> div {
+        transform: rotate(135deg);
+    }
+    .menu.active .menu-container div::after, .menu.menu.active .menu-container div::before {
+        top:0;
+        transform: rotate(90deg);
+    }
+    .menu.active .menu-container:hover > div {
+        transform: rotate(225deg);
+    }
+
+    .menu .links {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: black;
+        opacity: 0.85;
+        color: #fff;
+        transform: scale(0);
+        transition: all 0.5s ease;
+        z-index: 1;
+    }
+    .menu .links .container {
+        display: grid;
+        grid-template-columns: 300px;
+        align-content: center;
+        height: 100%;
+    }
+
+    .menu .links ul {
+        padding: 0;
+        list-style: none;
+        opacity: 0;
+        transition: all 0.4s ease;
+        margin: 0;
+       
+    }
+    .menu .links .container > ul {
+        border-right: 1px solid #fff;
+        position: relative;
+    }
+    .menu .links ul li {
+        font-family: "Roboto-Medium";
+        text-transform: capitalize;
+        font-size: 1.4rem;
+        color: #fff;
+        display: table;
+    }
+    
+    .menu .links ul li a {
+        text-decoration: none;
+        color: #fff;
+        
+    }
+    .menu .links ul li a:hover {
+        color: #000000;
+        box-shadow: 20px 0px 10px #fff, -20px 0px 10px #fff;
+        background: #ffffff;
+        opacity: 0.3;
+        border-radius: 30px 10px 30px 10px;
+    }
+    .menu .links ul li a.active {
+        color: #000000;
+        box-shadow: 20px 0px 10px #fff, -20px 0px 10px #fff;
+        background: #ffffff;
+        opacity: 0.3;
+        border-radius: 30px 10px 30px 10px;
+    }
+
+    .menu .links .container ul li ul {
+        position: absolute;
+        top: 0;
+        left: 135%;
+        width: 100%;
+        display: none;
+    }
+    .menu .links .container ul li ul.show {
+        display: block;
+    }
+    
+    .menu .links ul li:hover {
+        cursor: pointer;
+    }
+    .menu .links ul li:not(:first-child) {
+        padding-top: 3rem;
+    }
+
+    
+    .menu.active .links {
+        transform: scale(1);
+    }
+    .menu.active .links ul {
+        opacity: 1;
+        
+    }
+    
+    /* End Menu*/
+
+    /* Start Main Content */
+    .main {
+        padding: 2rem 0;
+    }
+    .main .container {
+        display: flex;
+    }
+    
+    .main .content {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .main .content h1, .main .content h2 {
+        color: #acb3ba;
+        text-transform: uppercase;
+        font-family: 'Roboto-Thin';
+        
+    }
+    
+    .main .content h1 {
+        font-size:4rem;
+        margin: 0;
+        letter-spacing: 5px;
+    }
+    .main .content h2 {
+        font-size: 2.5rem;
+        margin-top: 0;
+        letter-spacing: 2px;
+    }
+    
+    .main .content p {
+        color: #868c92;
+        font-size: 1.3rem;
+        font-family: "Roboto-Thin";
+        font-weight: bold;
+        margin: 3rem 0;
+        line-height: 1.5;
+    }
+    
+    .main .content .downlops {
+        display: flex;
+    }
+    .main .content .downlops .down-demo {
+        flex: 1;
+        display: flex;
+        margin-right: 30px;
+    }
+    .main .content .downlops .down-demo .icon {
+        margin-right: 20px;
+        color: #d0d0d0;
+        padding: 0.5rem 0;
+    }
+    .main .content .downlops .down-demo .icon i {
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        box-shadow: 0px 0px 15px #fff, 0px 0px 15px #fff;
+       
+    }
+    
+    [class^="flaticon-download"]:before, [class*=" flaticon-download"]:before, [class^="flaticon-download"]:after, [class*=" flaticon-download"]:after {
+        font-family: Flaticon;
+        font-size: 30px;
+        font-style: normal;
+        margin-left: 0;
+    }
+    .main .content .downlops .down-demo .text {
+        font-family: "Roboto-Thin";
+        font-weight: bold;
+        color: #868c92;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .main .content .downlops .down-demo .text > span {
+        font-size: 1.3rem;
+        text-transform: uppercase;
+    }
+    .main .content .downlops .down-demo .text .down-type {
+        font-size: 1.2rem;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 0.5rem;
+    }
+    .main .content .downlops .down-demo .text .down-type span {
+        font-size: 0.8rem;
+    }
+    .main .content .downlops .down-demo .text .down-type span:first-child {
+        text-transform: uppercase;
+    }
+    
+    .main .content .downlops .down-full {
+        flex: 2;
+        display: flex;
+    }
+    .main .content .downlops .down-full .icon {
+        margin-right: 20px;
+        color: #d0d0d0;
+        padding: 0.5rem 0;
+    }
+    .main .content .downlops .down-full .icon i {
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        box-shadow: 0px 0px 15px #fff, 0px 0px 15px #fff;
+        
+        /*box-shadow: 15px 0px 15px #fff, -15px 0px 15px #fff;*/
+    }
+    
+    .main .content .downlops .down-full .text {
+        font-family: "Roboto-Thin";
+        font-weight: bold;
+        color: #868c92;
+        text-transform: uppercase;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .main .content .downlops .down-full .text > span {
+        font-size: 1.3rem;
+    }
+    .main .content .downlops .down-full .text .down-type {
+        font-size: 1.2rem;
+        margin-top: 0.5rem;
+    }
+    .main .content .downlops .down-full .text .down-type span {
+        font-size: 0.8rem;
+    }
+    .main .copy-right {
+        font-family: "FancySignature";
+        color: #868c92;
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-top: 4rem;
+    }
+
+    .main .image {
+        flex: 1;
+    }
+    .main .image img {
+        box-shadow: -25px 25px 30px;
+        width:300px
+    }
+    
+    
+
+    /* End Main Content */
+
+    /* Start Social*/
+    .social {
+        position: absolute;
+        bottom: 35px;
+        width: 50px;
+        /*font-size: 50px;*/
+        left: 3%;
+    }
+    .social:hover {
+        cursor: pointer;
+    }
+    .social .icon i {
+        line-height: 1.5;
+    }
+    .social .icon i:before, .social .icon i:after {
+        font-family: Flaticon;
+        font-size: 20px;
+        font-style: normal;
+        margin-left: 20px;
+        color: #ccc;
+    }
+    .social .icon .social-icon {
+        height: 0px;
+        overflow: hidden;
+        transition: all 0.3s ease-in-out;
+    }
+    .social:hover .icon .social-icon {
+        height: 90px;
+    }
+    
+    /* End Social*/
+
+/* End Home */
